@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>Result</title>
+  </style>
+</head>
+
+<body>
+
+<div class="card" id="output"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const principal = params.get("principal");
+const time = params.get("time");
+const roi = params.get("roi");
+const interest = params.get("interest");
+const total = params.get("total");
+
+document.getElementById("output").innerHTML = `
+  <h3>Calculation Result</h3>
+  <p><b>Principal:</b> ₹${principal}</p>
+  <p><b>Time:</b> ${parseFloat(time).toFixed(2)} months</p>
+  <p><b>Rate:</b> ${roi}%</p>
+  <p><b>Interest:</b> ₹${parseFloat(interest).toFixed(2)}</p>
+  <p><b>Total Amount:</b> ₹${parseFloat(total).toFixed(2)}</p>
+  <a href="cal.php">← Back</a>
+`;
+</script>
+
+</body>
+</html>
